@@ -1,0 +1,75 @@
+body{
+  margin:0;
+  width:100vw;
+  min-height:100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.beers{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+  width:90%;
+  max-width:1000px;
+  margin:auto;
+}
+
+.card{
+  border:1px solid black;
+  box-sizing:border-box;
+  padding:10px;
+  position:relative;     /*Az origo a bal felső sarokból indul* (v)*/
+  overflow:hidden;  /* ez vágja le a sarokba lévő szalag szélét.*/
+
+}
+
+.card>span{
+  position:absolute;
+  top:0px;
+ 
+  width:150px;
+  height:50px;
+  font-size: 1.2rem;
+  font-weight: bold; 
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color:white;
+}
+
+.card>span:nth-child(1){   
+  left:-40px;
+  background-color: purple;
+  rotate:-45deg;
+  top:10px;
+  
+
+}
+
+.card>span:nth-child(2){   /* nth ---> második elemet alakítja át  */
+  right:-40px;
+  rotate:45deg;
+  top:10px;
+  
+}
+
+.beer-img{
+  height:200px;
+  background-size:contain;
+  background-repeat:no-repeat;    /* ne ismétlődjön  */
+  background-position: center;
+
+}
+
+@media only screen and (min-width:600px){
+  .beers{
+  grid-template-columns: 1fr 1fr;
+}
+}
+@media only screen and (min-width:1000px){
+  .beers{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+}
